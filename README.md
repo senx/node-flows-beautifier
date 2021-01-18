@@ -1,6 +1,6 @@
 # node-flows-beautifier
 
-FLoWS is one of the two analysis languages brought by [Warp 10™ time series database](https://www.warp10.io/).
+FLoWS is one of the two analysis languages brought by [Warp 10 time series database](https://www.warp10.io/).
 
 FLoWS beautifier was adapted from js-beautifier. It has no dependencies.
 
