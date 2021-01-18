@@ -17,10 +17,10 @@
 
 
 import { readFileSync } from 'fs';
-import { FlowsBeautifier, BeautifierOptions } from '../lib/flows-beautifier';
+import { FLoWSBeautifier, BeautifierOptions } from '../lib/flows-beautifier';
 
 console.log("FLoWS Beautifier test #1");
-let beautifier: FlowsBeautifier = new FlowsBeautifier({});
+let beautifier: FLoWSBeautifier = new FLoWSBeautifier({});
 
 const nbtest = 1;
 

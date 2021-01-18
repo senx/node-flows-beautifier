@@ -8,8 +8,8 @@ FLoWS beautifier was adapted from js-beautifier. It has no dependencies.
 ## Use the FLoWS beautifier
 
 ```
-import { FlowsBeautifier, BeautifierOptions } from '../lib/flows-beautifier';
-let beautifier: FlowsBeautifier = new FlowsBeautifier({});
+import { FLoWSBeautifier, BeautifierOptions } from '../lib/flows-beautifier';
+let beautifier: FLoWSBeautifier = new FLoWSBeautifier({});
 
 const result:string = beautifier.flowsBeautify(input);
 

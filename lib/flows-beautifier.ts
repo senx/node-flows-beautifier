@@ -32,7 +32,7 @@ export class BeautifierOptions {
   "e4x"?: boolean;
 }
 
-export class FlowsBeautifier {
+export class FLoWSBeautifier {
 
   private options: BeautifierOptions = {
     'indent_size': 2,
