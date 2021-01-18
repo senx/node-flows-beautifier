@@ -25,21 +25,21 @@ let beautifier: FlowsBeautifier = new FlowsBeautifier({});
 const nbtest = 1;
 
 for (let n = 1; n <= nbtest; n++) {
-  const fileIn:string = readFileSync(`tests/test${n}_in.flows`, 'utf-8');
-  const result:string = beautifier.flowsBeautify(fileIn);
-  const fileOut:string = readFileSync(`tests/test${n}_out.flows`, 'utf-8');
+  const fileIn: string = readFileSync(`tests/test${n}_in.flows`, 'utf-8');
+  const result: string = beautifier.flowsBeautify(fileIn);
+  const fileOut: string = readFileSync(`tests/test${n}_out.flows`, 'utf-8');
 
   // compare line by line
-  let outLines:string[] = fileOut.split('\n');
-  let resultLines:string[] = result.split('\n');
+  let outLines: string[] = fileOut.split('\n');
+  let resultLines: string[] = result.split('\n');
 
-  if (outLines.length!= resultLines.length) {
+  if (outLines.length != resultLines.length) {
     throw (`test #${n} failed, not the expected number of lines (${outLines.length} vs ${resultLines.length})`);
   }
 
-  for (let l=0; l<outLines.length;l++){
+  for (let l = 0; l < outLines.length; l++) {
     if (outLines[l] !== resultLines[l]) {
-      throw(`test #${n} failed at line ${l+1}, \n out   =${resultLines[l]}\n expect=${outLines[l]}`);
+      throw (`test #${n} failed at line ${l + 1}, \n out   =${resultLines[l]}\n expect=${outLines[l]}`);
     }
   }
 

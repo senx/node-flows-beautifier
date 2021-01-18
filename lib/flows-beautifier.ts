@@ -24,8 +24,14 @@ export class BeautifierOptions {
   "space_before_conditional"?: boolean;
   "unescape_strings"?: boolean;
   "wrap_line_length"?: number;
-  "indent_with_tabs"?:boolean;
+  "indent_with_tabs"?: boolean;
+  "break_chained_methods"?: boolean;
+  "spaceIn_paren"?: boolean;
+  "spaceIn_empty_paren"?: boolean;
+  "keep_arrayIndentation"?: boolean;
+  "e4x"?: boolean;
 }
+
 export class FlowsBeautifier {
 
   private options: BeautifierOptions = {
@@ -82,7 +88,7 @@ export class FlowsBeautifier {
 
   // Test whether a given character code starts an identifier.
 
-  private isIdentifierStart(code:number) {
+  private isIdentifierStart(code: number) {
     if (code < 65) return code === 36;
     if (code < 91) return true;
     if (code < 97) return code === 95;
@@ -92,7 +98,7 @@ export class FlowsBeautifier {
 
   // Test whether a given character is part of an identifier.
 
-  private isIdentifierChar(code:number) {
+  private isIdentifierChar(code: number) {
     if (code < 48) return code === 36;
     if (code < 58) return true;
     if (code < 65) return false;
@@ -108,7 +114,7 @@ export class FlowsBeautifier {
   /* this section comes from js-beautifier, slightly modified */
 
   private beautify(js_source_text, options) {
-    
+
     let create_flags = (flags_base, mode) => {
       var nextIndent_level = 0;
       if (flags_base) {
