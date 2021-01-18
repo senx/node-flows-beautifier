@@ -1,0 +1,38 @@
+{
+  "name": "@senx/flows-beautifier",
+  "version": "1.0.0",
+  "private": false,
+  "keywords": [
+    "time series",
+    "warp10",
+    "Warp 10",
+    "WarpScript",
+    "Geo Times Series",
+    "Times Series",
+    "FLoWS"
+  ],
+  "description": "Warp 10™ FLoWS language beautifier",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/senx/node-flows-beautifier.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/senx/node-flows-beautifier/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && ts-node tests/unitTests.ts"
+  },
+  "homepage": "https://www.warp10.io",
+  "author": "SenX <contact@senx.io>",
+  "files": [
+    "*"
+  ],
+  "devDependencies": {
+    "@types/node": "^12.19.14",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {}
+}

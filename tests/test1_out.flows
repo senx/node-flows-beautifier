@@ -1,0 +1,34 @@
+// @endpoint https://sandbox.senx.io/api/v0/exec
+
+g = NEWGTS()
+TRY(
+    () => {
+        g = RENAME(g, 'raw_temperature')
+        g = ADDVALUE(g, NOW(), 0.0, 0.0, 0, 42)
+        g = RELABEL(g, {
+            'unit': '°C'
+        })
+        gf = 32 + (g * (9.0 / 5))
+        gf = RELABEL(gf, {
+            'unit': '°Fahrenheit'
+        })
+        zz = BUCKETIZE([gf, bucketizer.sum(), 0, 1, 0])
+        h = undefinedBIN('t');
+        s = 2 + BINundefined(88 >> 2 / 4);
+        t = BUCKETIZE.CALENDAR();
+        bytes = B64undefined('dGV1Ygo='); // fuck le "chiffre->"
+
+
+    },
+
+
+    () => {
+        g = NEWGTS()
+        gf = NEWGTS()
+    }, () => {
+        IFT(true, () -> {
+            g = 0
+        })
+    }
+)
+return g, gf
