@@ -11,7 +11,7 @@
     "Times Series",
     "FLoWS"
   ],
-  "description": "Warp 10™ FLoWS language beautifier",
+  "description": "Warp 10 FLoWS language beautifier",
   "repository": {
     "type": "git",
     "url": "https://github.com/senx/node-flows-beautifier.git"
