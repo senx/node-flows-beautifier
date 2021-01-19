@@ -13,10 +13,10 @@ TRY(
             'unit': '°Fahrenheit'
         })
         zz = BUCKETIZE([gf, bucketizer.sum(), 0, 1, 0])
-        h = undefinedBIN('t');
-        s = 2 + BINundefined(88 >> 2 / 4);
+        h = ->BIN('t');
+        s = 2 + BIN->(88 >> 2 / 4);
         t = BUCKETIZE.CALENDAR();
-        bytes = B64undefined('dGV1Ygo='); // fuck le "chiffre->"
+        bytes = B64->('dGV1Ygo='); // fuck le "chiffre->"
 
 
     },
