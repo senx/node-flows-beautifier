@@ -1,6 +1,6 @@
 {
   "name": "@senx/flows-beautifier",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "private": false,
   "keywords": [
     "time series",
@@ -31,7 +31,7 @@
   "homepage": "https://www.warp10.io",
   "author": "SenX <contact@senx.io>",
   "files": [
-    "dist"
+    "*"
   ],
   "devDependencies": {
     "@types/node": "14.14.21",
