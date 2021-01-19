@@ -13,4 +13,4 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-export {FLoWSBeautifier as FLoWSBeautifier} from './lib/flows-beautifier';
+export { FLoWSBeautifier, BeautifierOptions } from './lib/flows-beautifier';
