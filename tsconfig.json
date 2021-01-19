@@ -4,6 +4,9 @@
     "module": "commonjs",
     "declaration": true,
     "outDir": "./dist",
-    "strict": false    // sorry, it is impossible to fix all the js-beautify errors.
+    "strict": true
   },
+  "include": [
+    "src"
+  ]
 }

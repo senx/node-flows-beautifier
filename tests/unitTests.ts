@@ -15,9 +15,8 @@
  */
 
 
-
-import { readFileSync } from 'fs';
-import { FLoWSBeautifier, BeautifierOptions } from '../lib/flows-beautifier';
+import {readFileSync} from 'fs';
+import {FLoWSBeautifier} from '../src';
 
 console.log("FLoWS Beautifier test #1");
 let beautifier: FLoWSBeautifier = new FLoWSBeautifier({});
