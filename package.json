@@ -24,7 +24,9 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "tsc && ts-node tests/unitTests.ts",
-    "prepublishOnly": "yarn build"
+    "test": "tsc && ts-node tests/unitTests.ts",
+    "compile": "tsc",
+    "prepublishOnly": "yarn compile"
   },
   "homepage": "https://www.warp10.io",
   "author": "SenX <contact@senx.io>",
