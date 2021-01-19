@@ -29,10 +29,10 @@ for (let n = 1; n <= nbtest; n++) {
   const fileOut: string = readFileSync(`tests/test${n}_out.flows`, 'utf-8');
 
   // compare line by line
-  let outLines: string[] = fileOut.split('\n');
-  let resultLines: string[] = result.split('\n');
+  const outLines: string[] = fileOut.split('\n');
+  const resultLines: string[] = result.split('\n');
 
-  if (outLines.length != resultLines.length) {
+  if (outLines.length !== resultLines.length) {
     throw (`test #${n} failed, not the expected number of lines (${outLines.length} vs ${resultLines.length})`);
   }
 

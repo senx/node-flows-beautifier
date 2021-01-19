@@ -37,8 +37,8 @@ export class BeautifierOptions {
 export class FLoWSBeautifier {
 
   private readonly options: BeautifierOptions = {
-    'indent_size': 2,
-    'indent_char': ' '
+    indent_size: 2,
+    indent_char: ' '
   }
 
   constructor(options?: BeautifierOptions) {
@@ -136,11 +136,12 @@ export class FLoWSBeautifier {
     const whitespace = '\n\r\t '.split('');
     const wordchar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_$'.split('');
     const digits = '0123456789'.split('');
-    let punct = '+ - * / % & ++ -- = += -= *= /= %= == === != !== > < >= <= >> << >>> >>>= >>= <<= && &= | || ! ~ , : ? ^ ^= |= :: => ->'
-      + ' <%= <% %> <?= <? ?>' // try to be a good boy and try not to break the markup language identifiers
-        .split(' ');
+    let punct: any = '+ - * / % & ++ -- = += -= *= /= %= == === != !== > < >= <= >> << >>> >>>= >>= <<= && &= | || ! ~ , : ? ^ ^= |= :: => ->';
+    punct += ' <%= <% %> <?= <? ?>'; // try to be a good boy and try not to break the markup language identifiers
+    punct = punct.split(' ');
+    const simpleArrowPlaceHolder = 'NoONEwilllEwervriteSuchGarBaGeForArrrrow';
     // words which should always start on new line.
-    const  line_starters = 'continue,try,throw,return,var,let,const,if,switch,case,default,for,while,break,function,yield'.split(',');
+    const line_starters = 'continue,try,throw,return,var,let,const,if,switch,case,default,for,while,break,function,yield'.split(',');
     const reserved_words = line_starters.concat(['do', 'in', 'else', 'get', 'set', 'new', 'catch', 'finally', 'typeof']);
 
 
@@ -155,7 +156,6 @@ export class FLoWSBeautifier {
     };
 
 
-    const simpleArrowPlaceHolder = 'NoONEwilllEwervriteSuchGarBaGeForArrrrow';
 
     const create_flags = (flags_base: any, mode: any) => {
       let nextIndent_level = 0;
