@@ -16,9 +16,10 @@
 
 
 import {readFileSync} from 'fs';
+import { exit } from 'process';
 import {FLoWSBeautifier} from '../src';
 
-console.log("FLoWS Beautifier test #1");
+console.log("FLoWS Beautifier test #1...");
 let beautifier: FLoWSBeautifier = new FLoWSBeautifier({});
 
 const nbtest = 1;
@@ -43,3 +44,4 @@ for (let n = 1; n <= nbtest; n++) {
   }
 
 }
+console.log("... PASSED");

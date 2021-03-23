@@ -17,8 +17,9 @@ TRY(
         s = 2 + BIN->(88 >> 2 / 4);
         t = BUCKETIZE.CALENDAR();
         bytes = B64->('dGV1Ygo='); // fuck le "chiffre->"
-
-
+        (q, r) = @flows/euclideanDivision(10, 3)
+        @flows/euclideanDivision(10, 3)
+        @macro(22, "twenty")
     },
 
 

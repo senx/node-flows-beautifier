@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 
+import { SignPrivateKeyInput } from "crypto";
+
 export class BeautifierOptions {
   indent_size?: number;
   indent_char?: string;
@@ -149,6 +151,7 @@ export class FLoWSBeautifier {
     punct += ' <%= <% %> <?= <? ?>'; // try to be a good boy and try not to break the markup language identifiers
     punct = punct.split(' ');
     const simpleArrowPlaceHolder = 'NoONEwilllEwervriteSuchGarBaGeForArrrrow';
+    const simpleMacroPlaceHolder = 'NoONEwilllEwervriteSuchGarBaGeForMacroStartOrSeparator';
     // words which should always start on new line.
     const line_starters = 'continue,try,throw,return,var,let,const,if,switch,case,default,for,while,break,function,yield'.split(',');
     const reserved_words = line_starters.concat(['do', 'in', 'else', 'get', 'set', 'new', 'catch', 'finally', 'typeof']);
@@ -253,6 +256,11 @@ export class FLoWSBeautifier {
     // PP before parsing text, replace all the WarpScript function that contains -> by something else
     js_source_text = js_source_text.replace(/->(?=[A-Z0-9])/g, simpleArrowPlaceHolder);
     js_source_text = js_source_text.replace(/(?<=[A-Z0-9])->/g, simpleArrowPlaceHolder);
+
+    // PP before parsing text, identify macros ( @xx or @xx/yy/zz/.. ) and replace by simpleMacroPlaceHolder_xx_yy_zz
+    js_source_text = js_source_text.replace(/@([\w-]+)(\/[\w-]+)*/g, (match: String, contents: any, offset: any, input_string: String) => {
+      return simpleMacroPlaceHolder + match.slice(1).split('/').join(simpleMacroPlaceHolder);
+    });
 
     while (js_source_text && (js_source_text.charAt(0) === ' ' || js_source_text.charAt(0) === '\t')) {
       preindent_string += js_source_text.charAt(0);
@@ -1701,6 +1709,11 @@ export class FLoWSBeautifier {
 
     // PP after beautify, replace the simple arrow placeholder with ->
     sweet_code = sweet_code.replace(new RegExp(simpleArrowPlaceHolder, 'g'), '->');
+
+    // PP after beautify, substitute macro names
+    sweet_code = sweet_code.replace(new RegExp(`${simpleMacroPlaceHolder}[\\w-]+`, 'g'), (match: String, contents: any, offset: any, input_string: String) => {
+      return "@" + match.split(simpleMacroPlaceHolder).slice(1).join('/');
+    });
 
     return sweet_code;
   }
